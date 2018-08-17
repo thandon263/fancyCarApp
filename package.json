@@ -1,0 +1,25 @@
+{
+  "name": "fancyCarApp",
+  "version": "1.0.0",
+  "description": "\"# fancyCarApp\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thandon263/fancyCarApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thandon263/fancyCarApp/issues"
+  },
+  "homepage": "https://github.com/thandon263/fancyCarApp#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemon": "^1.18.3"
+  }
+}
