@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --watch node index",
+    "dev:build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -29,6 +30,8 @@
     "nodemon": "^1.18.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "webpack": "^4.16.5"
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   }
 }
