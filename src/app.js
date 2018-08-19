@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from './components/Header';
+import Cars from './containers/CarsContainer';
 
 class App extends React.Component {
     render() {
         return (
-            <div>Hello React!!</div>
+            <div>
+                <Header />
+                <Cars />
+            </div>
         );
     }
 }
