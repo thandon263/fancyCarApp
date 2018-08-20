@@ -1,29 +1,45 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import Masonry from 'react-masonry-component';
 import Card from '../components/Card';
 import Toolbar from './Toolbar';
+import { fetchCars } from '../actions';
 
 class CarsContainer extends React.Component {
+    componentDidMount() {
+        this.props.fetchCars();
+    }
+
     renderCars() {
-        return <Card 
-            picture="https://firebasestorage.googleapis.com/v0/b/thandothedev.appspot.com/o/fancycars%2Fmercedes-benz-gls.jpg?alt=media&token=4a828406-82cd-44aa-be00-d1ff09df6618"
-            name="Mercedes Benz"
-            make="4Matic"
-            model="GLS 450"
-            availability="Available"
-        />
+        return this.props.cars.map(car => {
+            return (
+                <Card 
+                    name={ car.name }
+                    model={ car.model }
+                    make={ car.make }
+                    picture={ car.picture }
+                    availability={ car.available }
+                />
+            );
+        });
     }
     
     render() {
         return (
             <div className="car">
                 <Toolbar />
-                <div className="car__container"> 
-                    {this.renderCars()}
-                    {this.renderCars()}
+                <div>
+                    <Masonry>
+                        { this.renderCars() }
+                    </Masonry>
                 </div>
             </div>
         )
     }
 }
 
-export default CarsContainer;
+const mapStateToProps = ({ cars }) => {
+    return { cars }
+}
+
+export default connect(mapStateToProps, { fetchCars })(CarsContainer);

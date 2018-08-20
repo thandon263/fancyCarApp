@@ -86,6 +86,10 @@
     font-weight: 600;
 }
 
+.card__imageContainer  {
+    width: 250px;
+    height: 180px;
+}
 .card__content img {
     max-width: 250px;
     max-height: 180px;
