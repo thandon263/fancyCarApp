@@ -9,8 +9,7 @@ class CarsContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            cars: [],
-            availability: false
+            cars: []
         }
     }
 
@@ -18,41 +17,69 @@ class CarsContainer extends React.Component {
         this.props.fetchCars();
     }
 
-    renderCars() {
-        return this.props.cars.map(car => {
-            return ( 
-                <Card 
-                    name={ car.name }
-                    model={ car.model }
-                    make={ car.make }
-                    picture={ car.picture }
-                    availability={ car.available }
-                />
-            );
+    componentDidUpdate(prevProps, prevState) {
+        // only update if the data has changed
+        if (prevProps.cars !== this.props.cars) {
+            this.setState({
+                cars: this.props.cars
+            });
+        }
+    }
+
+    handleGetAll() {
+        const result = []
+        this.props.cars.map(car => {
+            result.push(car)
+        });
+
+        this.setState({
+            cars: result
         });
     }
 
-    renderAvailable() {
-        console.log("All available cars");
+    handleSortByName() {
+        const cars = this.props.cars
+
+        const sortedByName = cars.sort((a, b) => {
+            return a.name - b.name
+        });
     }
-    
+
+    handleAvailability() {
+        const result = []
+        this.props.cars.filter(car => {
+            if (car.available == "In Dealership") {
+                result.push(car);
+            }
+        });
+
+        this.setState({
+            cars: result
+        });
+    } 
+
     render() {
+        const data = this.state.cars;
         return (
             <div className="car">
-                <Toolbar />
+                <Toolbar 
+                    all={() => this.handleGetAll()}
+                    nameSort={() => this.handleSortByName()}
+                    availability={() => this.handleAvailability()}
+                />
                 <div>
                     <Masonry>
-                        { this.props.cars.map(car => {
-                            return ( 
-                                <Card 
+                        { 
+                            this.state.cars.map(car => {
+                                return <Card 
                                     name={ car.name }
-                                    model={ car.model }
                                     make={ car.make }
+                                    model={ car.model }
                                     picture={ car.picture }
                                     availability={ car.available }
                                 />
-                            );
-                        })}
+                            })
+                        }
                     </Masonry>
                 </div>
             </div>

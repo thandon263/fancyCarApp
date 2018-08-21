@@ -4,8 +4,9 @@ class Toolbar extends React.Component {
     render() {
         return(
             <div className="toolbar">
-                <p className="toolbar--name">Name</p>
-                <p className="toolbar--availability">Availability</p>
+                <div className="toolbar--name" onClick={this.props.all}>all</div>
+                <div className="toolbar--name" onClick={this.props.nameSort}>Name</div>
+                <div className="toolbar--availability" onClick={this.props.availability}>Availability</div>
             </div>
         );
     }
