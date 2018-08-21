@@ -7,7 +7,7 @@ class Toolbar extends React.Component {
                 <div 
                     className="toolbar--name" 
                     onClick={this.props.all}>
-                    all
+                    All
                 </div>
                 <div 
                     className="toolbar--name" 

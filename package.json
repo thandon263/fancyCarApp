@@ -4,7 +4,8 @@
   "description": "\"# fancyCarApp\"",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --watch node index",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:server": "nodemon --watch node index",
     "dev:build": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -33,6 +34,7 @@
     "firebase-admin": "^6.0.0",
     "mongoose": "^5.2.9",
     "nodemon": "^1.18.3",
+    "npm-run-all": "^4.1.3",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-masonry": "^0.1.3",
