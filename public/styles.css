@@ -24,7 +24,7 @@
     padding: 0 20px;
     background: #1976d2;
     color: #fff;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .toolbar {
@@ -35,6 +35,8 @@
     background:  #115293;
     color: #fff;
     display: flex;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 600;
     flex-direction: row;
     justify-content: flex-end;
     font-size: 10pt;
@@ -68,7 +70,7 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
-    border-top: 1px solid grey;
+    border-top: 2px solid #eeeeee;
     margin: 0 10px;
 }
 
@@ -78,7 +80,7 @@
 }
 
 .card__availability {
-    background: #64dd17;
+    background: #115293;
     color: #fff;
     letter-spacing: 2px;
     text-align: center;
@@ -103,3 +105,4 @@
     width: max-content;
 }
 
+.footer { height: 80px; width: 100%; line-height: 80px; text-align: center }

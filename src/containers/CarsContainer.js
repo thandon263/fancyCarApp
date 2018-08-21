@@ -6,13 +6,21 @@ import Toolbar from './Toolbar';
 import { fetchCars } from '../actions';
 
 class CarsContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cars: [],
+            availability: false
+        }
+    }
+
     componentDidMount() {
         this.props.fetchCars();
     }
 
     renderCars() {
         return this.props.cars.map(car => {
-            return (
+            return ( 
                 <Card 
                     name={ car.name }
                     model={ car.model }
@@ -23,6 +31,10 @@ class CarsContainer extends React.Component {
             );
         });
     }
+
+    renderAvailable() {
+        console.log("All available cars");
+    }
     
     render() {
         return (
@@ -30,7 +42,17 @@ class CarsContainer extends React.Component {
                 <Toolbar />
                 <div>
                     <Masonry>
-                        { this.renderCars() }
+                        { this.props.cars.map(car => {
+                            return ( 
+                                <Card 
+                                    name={ car.name }
+                                    model={ car.model }
+                                    make={ car.make }
+                                    picture={ car.picture }
+                                    availability={ car.available }
+                                />
+                            );
+                        })}
                     </Masonry>
                 </div>
             </div>

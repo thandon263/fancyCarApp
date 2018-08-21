@@ -7,9 +7,12 @@ import { Provider } from "react-redux";
 
 import Header from './components/Header';
 import Cars from './containers/CarsContainer';
+import Footer from './components/Footer';
 import reducers from './reducers';
 
-const store = createStore(reducers, {}, compose(applyMiddleware(thunk)));
+const store = createStore(
+    reducers, {}, 
+    compose(applyMiddleware(thunk)));
 
 class App extends React.Component {
     render() {
@@ -17,9 +20,13 @@ class App extends React.Component {
             <div>
                 <Header />
                 <Cars />
+                <Footer />
             </div>
         );
     }
 }
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, document.getElementById('root'));
