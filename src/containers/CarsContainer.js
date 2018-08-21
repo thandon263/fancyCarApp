@@ -58,6 +58,21 @@ class CarsContainer extends React.Component {
         });
     } 
 
+    // [ Render Cars ]
+    renderCars() {
+        return (
+            this.state.cars.map(car => {
+                return <Card 
+                    name={ car.name }
+                    make={ car.make }
+                    model={ car.model }
+                    picture={ car.picture }
+                    availability={ car.available }
+                />
+            })
+        );
+    }
+
     render() {
         const data = this.state.cars;
         return (
@@ -69,17 +84,7 @@ class CarsContainer extends React.Component {
                 />
                 <div>
                     <Masonry>
-                        { 
-                            this.state.cars.map(car => {
-                                return <Card 
-                                    name={ car.name }
-                                    make={ car.make }
-                                    model={ car.model }
-                                    picture={ car.picture }
-                                    availability={ car.available }
-                                />
-                            })
-                        }
+                        { this.renderCars() }
                     </Masonry>
                 </div>
             </div>
