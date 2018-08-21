@@ -74,6 +74,7 @@ class CarsContainer extends React.Component {
                     model={ car.model }
                     picture={ car.picture }
                     availability={ car.available }
+                    onClick={() => alert("Continue [Buy Dialog]")}
                 />
             })
         );
