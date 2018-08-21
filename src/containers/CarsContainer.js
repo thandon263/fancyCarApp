@@ -88,7 +88,7 @@ class CarsContainer extends React.Component {
                     nameSort={() => this.handleSortByName()}
                     availability={() => this.handleAvailability()}
                 />
-                <div>
+                <div className="car__container">
                     <Masonry>
                         { this.renderCars() }
                     </Masonry>

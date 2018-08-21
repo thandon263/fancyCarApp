@@ -99,10 +99,5 @@
     height: 100%;
 }
 
-.car__container {
-    height: auto;
-    display: flex;
-    width: max-content;
-}
 
-.footer { height: 80px; width: 100%; line-height: 80px; text-align: center }
+.footer { height: 80px; width: 100%; line-height: 80px; text-align: center; position: relative; bottom: 0 }
