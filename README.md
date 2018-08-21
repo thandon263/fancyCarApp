@@ -1,5 +1,7 @@
 # Fancy Car Application
-===
+
+This is a fancy car application that loads exclusive cars and presents the name of the car, model, make and the picture of the car. You can filter by availability. This is built in NodeJS and React (Redux) Architecture. I have thought about handling data in the application using react lifecycle methods
+
 
 ## Installation
 Run this command in your terminal:
@@ -16,12 +18,12 @@ And then execute:
 
 This is going to start a parallel process of webpack and express server in the terminal and you can navigate to `http://localhost:3000` to view the application.
 
-===
+
 ## Development
 
 ```JavaScript
            ...
-           
+
     const store = createStore(
     reducers, {}, 
     compose(applyMiddleware(thunk)));
