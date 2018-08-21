@@ -41,14 +41,20 @@ class CarsContainer extends React.Component {
         const cars = this.props.cars
 
         const sortedByName = cars.sort((a, b) => {
-            return a.name - b.name
+            return b.name < a.name
+        });
+
+        this.setState({
+            cars: sortedByName
         });
     }
 
     handleAvailability() {
         const result = []
+        const availability = "In Dealership";
+
         this.props.cars.filter(car => {
-            if (car.available == "In Dealership") {
+            if (car.available == availability) {
                 result.push(car);
             }
         });
