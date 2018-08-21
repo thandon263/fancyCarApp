@@ -44,8 +44,8 @@ class App extends React.Component {
 
 ```JavaScript 
     module.exports = {
-    mongoURI: 'mongodb://<Add_Your_Username>:<Add_Your_Password>@ds227352.mlab.com:27352/<database>'
-} 
+        mongoURI: 'mongodb://<Add_Your_Username>:<Add_Your_Password>@ds227352.mlab.com:27352/<database>'
+    } 
 ```
 * If you have no account create an account and setup your database.
 
