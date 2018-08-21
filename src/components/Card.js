@@ -12,7 +12,7 @@ const Card = ({ picture, name, make, model, availability, onClick }) => {
                         <p className="card--text">{ model }</p>
                         <p className="card--text">{ make }</p>
                     </div>
-                    <div className="card__availability card--text" style={{ backgroundColor: "#c62828" ? availability === "Out of Stock" : "#64dd17" }} >{ availability }</div>
+                    <div className="card__availability card--text">{ availability }</div>
                 </div>
                 <Button hidden={ true ? availability == "Out of Stock" : false } onClick={onClick} />
             </div>

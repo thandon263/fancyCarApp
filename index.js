@@ -5,9 +5,10 @@ const keys = require('./config/keys');
 
 require('./models/Car');
 
-// Initialize server
+// Create app level object of Express JS
 const app = express();
-
+// Parse incoming request bodies in a middleware
+// Available req.body
 app.use(bodyParser.urlencoded({ extended: true}));
 
 // [ PUBLIC ] - For static assets
