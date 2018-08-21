@@ -36,6 +36,20 @@ class App extends React.Component {
             
             ...
 ```
+## Setup
+
+1. After downloading the project  "create a folder named  ' config/ '  " on the root of the project.
+2. Then create a file named "keys.js" inside the config/ directory.
+3. Then add this piece of code to have access to the database.
+
+```JavaScript 
+    module.exports = {
+    mongoURI: 'mongodb://<Add_Your_Username>:<Add_Your_Password>@ds227352.mlab.com:27352/<database>'
+} 
+```
+* If you have no account create an account and setup your database.
+
+* To insert data use the Schema inside `models/` and everything else should work just fine.
 
 ## License
 
