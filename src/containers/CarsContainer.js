@@ -15,6 +15,7 @@ class CarsContainer extends React.Component {
 
     componentDidMount() {
         this.props.fetchCars();
+        this.handleGetAll();
     }
 
     componentDidUpdate(prevProps, prevState) {
